@@ -1,15 +1,15 @@
 import type {Product} from "../types/index";
 
-const img = (category: string, label: string) => {
-  const colors: Record<string, string> = {
-    Produce:        'dcfce7/16a34a',
-    Dairy:          'dbeafe/2563eb',
-    Snacks:         'fef9c3/ca8a04',
-    Pantry:         'ffedd5/ea580c',
-    Bakery:         'fce7f3/db2777',
-    'Prepared Foods': 'f3e8ff/9333ea',
+const img = (category: string) => {
+  const config: Record<string, { color: string; label: string }> = {
+    Produce:          { color: 'dcfce7/16a34a', label: 'Produce' },
+    Dairy:            { color: 'dbeafe/2563eb', label: 'Dairy' },
+    Snacks:           { color: 'fef9c3/ca8a04', label: 'Snacks' },
+    Pantry:           { color: 'ffedd5/ea580c', label: 'Pantry' },
+    Bakery:           { color: 'fce7f3/db2777', label: 'Bakery' },
+    'Prepared Foods': { color: 'f3e8ff/9333ea', label: 'Prepared' },
   };
-  const color = colors[category] ?? 'f3f4f6/6b7280';
+  const { color, label } = config[category] ?? { color: 'f3f4f6/6b7280', label: category };
   return `https://placehold.co/64x64/${color}?text=${encodeURIComponent(label)}`;
 };
 
@@ -20,7 +20,7 @@ export const mockProducts: Product[] = [
         retailer: "Target",
         price: 2.69,
         size: "1 lb",
-        image: img('Produce', '🍓'),
+        image: img('Produce'),
         category: "Produce",
       },
       {
@@ -29,7 +29,7 @@ export const mockProducts: Product[] = [
         retailer: "Target",
         price: 3.99,
         size: "16 oz",
-        image: img('Produce', '🍓'),
+        image: img('Produce'),
         category: "Produce",
       },
       {
@@ -38,7 +38,7 @@ export const mockProducts: Product[] = [
         retailer: "Target",
         price: 1.79,
         size: "2 lb",
-        image: img('Produce', '🍌'),
+        image: img('Produce'),
         category: "Produce",
       },
       {
@@ -47,7 +47,7 @@ export const mockProducts: Product[] = [
         retailer: "Target",
         price: 2.99,
         size: "1 gal",
-        image: img('Dairy', '🥛'),
+        image: img('Dairy'),
         category: "Dairy",
       },
       {
@@ -56,7 +56,7 @@ export const mockProducts: Product[] = [
         retailer: "Target",
         price: 1.49,
         size: "12 ct",
-        image: img('Dairy', '🥚'),
+        image: img('Dairy'),
         category: "Dairy",
       },
       {
@@ -65,7 +65,7 @@ export const mockProducts: Product[] = [
         retailer: "Target",
         price: 4.79,
         size: "12 oz",
-        image: img('Snacks', '🌽'),
+        image: img('Snacks'),
         category: "Snacks",
       },
       {
@@ -74,7 +74,7 @@ export const mockProducts: Product[] = [
         retailer: "Target",
         price: 1.79,
         size: "24 oz",
-        image: img('Pantry', '🍅'),
+        image: img('Pantry'),
         category: "Pantry",
       },
       {
@@ -83,7 +83,7 @@ export const mockProducts: Product[] = [
         retailer: "Whole Foods",
         price: 6.29,
         size: "64 oz",
-        image: img('Dairy', '🥛'),
+        image: img('Dairy'),
         category: "Dairy",
       },
       {
@@ -92,7 +92,7 @@ export const mockProducts: Product[] = [
         retailer: "Whole Foods",
         price: 7.99,
         size: "128 oz",
-        image: img('Dairy', '🥛'),
+        image: img('Dairy'),
         category: "Dairy",
       },
       {
@@ -101,7 +101,7 @@ export const mockProducts: Product[] = [
         retailer: "Whole Foods",
         price: 2.99,
         size: "5 oz",
-        image: img('Produce', '🥬'),
+        image: img('Produce'),
         category: "Produce",
       },
       {
@@ -110,7 +110,7 @@ export const mockProducts: Product[] = [
         retailer: "Whole Foods",
         price: 10.99,
         size: "16 oz",
-        image: img('Pantry', '🥜'),
+        image: img('Pantry'),
         category: "Pantry",
       },
       {
@@ -119,7 +119,7 @@ export const mockProducts: Product[] = [
         retailer: "Whole Foods",
         price: 4.99,
         size: "24 oz",
-        image: img('Bakery', '🍞'),
+        image: img('Bakery'),
         category: "Bakery",
       },
       {
@@ -128,7 +128,7 @@ export const mockProducts: Product[] = [
         retailer: "Costco",
         price: 5.66,
         size: "each",
-        image: img('Prepared Foods', '🍗'),
+        image: img('Prepared Foods'),
         category: "Prepared Foods",
       },
       {
@@ -137,7 +137,7 @@ export const mockProducts: Product[] = [
         retailer: "Costco",
         price: 3.73,
         size: "24 ct",
-        image: img('Dairy', '🥚'),
+        image: img('Dairy'),
         category: "Dairy",
       },
       {
@@ -146,7 +146,7 @@ export const mockProducts: Product[] = [
         retailer: "Costco",
         price: 8.61,
         size: "24 ct",
-        image: img('Dairy', '🥚'),
+        image: img('Dairy'),
         category: "Dairy",
       },
       {
@@ -155,7 +155,7 @@ export const mockProducts: Product[] = [
         retailer: "Costco",
         price: 7.37,
         size: "40 oz",
-        image: img('Snacks', '🌽'),
+        image: img('Snacks'),
         category: "Snacks",
       },
       {
@@ -164,7 +164,7 @@ export const mockProducts: Product[] = [
         retailer: "Costco",
         price: 6.69,
         size: "48 oz",
-        image: img('Dairy', '🫙'),
+        image: img('Dairy'),
         category: "Dairy",
       },
       {
@@ -173,7 +173,7 @@ export const mockProducts: Product[] = [
         retailer: "Costco",
         price: 5.55,
         size: "22 oz",
-        image: img('Snacks', '🍋'),
+        image: img('Snacks'),
         category: "Snacks",
       },
       {
@@ -182,7 +182,7 @@ export const mockProducts: Product[] = [
         retailer: "Trader Joe's",
         price: 2.99,
         size: "9 oz",
-        image: img('Snacks', '🌶️'),
+        image: img('Snacks'),
         category: "Snacks",
       },
       {
@@ -191,7 +191,7 @@ export const mockProducts: Product[] = [
         retailer: "Trader Joe's",
         price: 3.99,
         size: "6 ct",
-        image: img('Dairy', '🍓'),
+        image: img('Dairy'),
         category: "Dairy",
       },
 ];
