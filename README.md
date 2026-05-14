@@ -11,7 +11,28 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser. For the best experience, use Chrome DevTools mobile emulation (iPhone 14 Pro recommended).
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Viewing in mobile emulation
+
+This app is designed for mobile viewports. To preview it as it's intended:
+
+**Chrome (recommended)**
+1. Open DevTools with `Cmd+Option+I` (Mac) or `F12` (Windows)
+2. Click the **Toggle Device Toolbar** icon (phone/tablet icon) in the top-left of DevTools, or press `Cmd+Shift+M` / `Ctrl+Shift+M`
+3. Select **iPhone 14 Pro** (or any mobile preset) from the device dropdown
+4. Reload the page
+
+**Firefox**
+1. Open DevTools with `Cmd+Option+I` / `F12`
+2. Click the **Responsive Design Mode** icon (phone icon) in the top-right of DevTools, or press `Cmd+Option+M` / `Ctrl+Shift+M`
+3. Select a mobile preset or set the width to 390px
+
+**Safari**
+1. Enable the Develop menu: Safari → Settings → Advanced → check "Show features for web developers"
+2. Open DevTools with `Cmd+Option+I`
+3. Click **Responsive Design Mode** or press `Ctrl+Cmd+R`
+4. Select an iPhone preset from the device dropdown
 
 ## Features
 
