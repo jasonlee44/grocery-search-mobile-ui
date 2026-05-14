@@ -34,7 +34,10 @@ function ProductCard({ product }: Props) {
         alt={product.name}
         className="w-16 h-16 rounded-xl object-cover bg-gray-100 shrink-0"
         onError={e => {
-          (e.target as HTMLImageElement).src = `https://placehold.co/64x64/f3f4f6/9ca3af?text=${encodeURIComponent(product.category[0])}`;
+          const img = e.target as HTMLImageElement;
+          if (!img.src.includes('placehold.co')) {
+            img.src = `https://placehold.co/64x64/f3f4f6/9ca3af?text=${encodeURIComponent(product.category[0])}`;
+          }
         }}
       />
 

@@ -1,5 +1,18 @@
 import type {Product} from "../types/index";
 
+const img = (category: string, label: string) => {
+  const colors: Record<string, string> = {
+    Produce:        'dcfce7/16a34a',
+    Dairy:          'dbeafe/2563eb',
+    Snacks:         'fef9c3/ca8a04',
+    Pantry:         'ffedd5/ea580c',
+    Bakery:         'fce7f3/db2777',
+    'Prepared Foods': 'f3e8ff/9333ea',
+  };
+  const color = colors[category] ?? 'f3f4f6/6b7280';
+  return `https://placehold.co/64x64/${color}?text=${encodeURIComponent(label)}`;
+};
+
 export const mockProducts: Product[] = [
     {
         id: "prod-001",
@@ -7,7 +20,7 @@ export const mockProducts: Product[] = [
         retailer: "Target",
         price: 2.69,
         size: "1 lb",
-        image: "/images/strawberries.jpg",
+        image: img('Produce', '🍓'),
         category: "Produce",
       },
       {
@@ -16,7 +29,7 @@ export const mockProducts: Product[] = [
         retailer: "Target",
         price: 3.99,
         size: "16 oz",
-        image: "/images/organic-strawberries.jpg",
+        image: img('Produce', '🍓'),
         category: "Produce",
       },
       {
@@ -25,7 +38,7 @@ export const mockProducts: Product[] = [
         retailer: "Target",
         price: 1.79,
         size: "2 lb",
-        image: "/images/organic-bananas.jpg",
+        image: img('Produce', '🍌'),
         category: "Produce",
       },
       {
@@ -34,7 +47,7 @@ export const mockProducts: Product[] = [
         retailer: "Target",
         price: 2.99,
         size: "1 gal",
-        image: "/images/whole-milk.jpg",
+        image: img('Dairy', '🥛'),
         category: "Dairy",
       },
       {
@@ -43,7 +56,7 @@ export const mockProducts: Product[] = [
         retailer: "Target",
         price: 1.49,
         size: "12 ct",
-        image: "/images/large-eggs.jpg",
+        image: img('Dairy', '🥚'),
         category: "Dairy",
       },
       {
@@ -52,7 +65,7 @@ export const mockProducts: Product[] = [
         retailer: "Target",
         price: 4.79,
         size: "12 oz",
-        image: "/images/white-corn-tortilla-chips.jpg",
+        image: img('Snacks', '🌽'),
         category: "Snacks",
       },
       {
@@ -61,7 +74,7 @@ export const mockProducts: Product[] = [
         retailer: "Target",
         price: 1.79,
         size: "24 oz",
-        image: "/images/pasta-sauce.jpg",
+        image: img('Pantry', '🍅'),
         category: "Pantry",
       },
       {
@@ -70,7 +83,7 @@ export const mockProducts: Product[] = [
         retailer: "Whole Foods",
         price: 6.29,
         size: "64 oz",
-        image: "/images/organic-whole-milk.jpg",
+        image: img('Dairy', '🥛'),
         category: "Dairy",
       },
       {
@@ -79,7 +92,7 @@ export const mockProducts: Product[] = [
         retailer: "Whole Foods",
         price: 7.99,
         size: "128 oz",
-        image: "/images/365-organic-whole-milk.jpg",
+        image: img('Dairy', '🥛'),
         category: "Dairy",
       },
       {
@@ -88,7 +101,7 @@ export const mockProducts: Product[] = [
         retailer: "Whole Foods",
         price: 2.99,
         size: "5 oz",
-        image: "/images/organic-baby-spinach.jpg",
+        image: img('Produce', '🥬'),
         category: "Produce",
       },
       {
@@ -97,7 +110,7 @@ export const mockProducts: Product[] = [
         retailer: "Whole Foods",
         price: 10.99,
         size: "16 oz",
-        image: "/images/almond-butter.jpg",
+        image: img('Pantry', '🥜'),
         category: "Pantry",
       },
       {
@@ -106,7 +119,7 @@ export const mockProducts: Product[] = [
         retailer: "Whole Foods",
         price: 4.99,
         size: "24 oz",
-        image: "/images/sourdough-bread.jpg",
+        image: img('Bakery', '🍞'),
         category: "Bakery",
       },
       {
@@ -115,7 +128,7 @@ export const mockProducts: Product[] = [
         retailer: "Costco",
         price: 5.66,
         size: "each",
-        image: "/images/rotisserie-chicken.jpg",
+        image: img('Prepared Foods', '🍗'),
         category: "Prepared Foods",
       },
       {
@@ -124,7 +137,7 @@ export const mockProducts: Product[] = [
         retailer: "Costco",
         price: 3.73,
         size: "24 ct",
-        image: "/images/costco-eggs.jpg",
+        image: img('Dairy', '🥚'),
         category: "Dairy",
       },
       {
@@ -133,7 +146,7 @@ export const mockProducts: Product[] = [
         retailer: "Costco",
         price: 8.61,
         size: "24 ct",
-        image: "/images/organic-eggs.jpg",
+        image: img('Dairy', '🥚'),
         category: "Dairy",
       },
       {
@@ -142,7 +155,7 @@ export const mockProducts: Product[] = [
         retailer: "Costco",
         price: 7.37,
         size: "40 oz",
-        image: "/images/costco-tortilla-chips.jpg",
+        image: img('Snacks', '🌽'),
         category: "Snacks",
       },
       {
@@ -151,7 +164,7 @@ export const mockProducts: Product[] = [
         retailer: "Costco",
         price: 6.69,
         size: "48 oz",
-        image: "/images/greek-yogurt.jpg",
+        image: img('Dairy', '🫙'),
         category: "Dairy",
       },
       {
@@ -160,7 +173,7 @@ export const mockProducts: Product[] = [
         retailer: "Costco",
         price: 5.55,
         size: "22 oz",
-        image: "/images/salt-lime-tortilla-chips.jpg",
+        image: img('Snacks', '🍋'),
         category: "Snacks",
       },
       {
@@ -169,7 +182,7 @@ export const mockProducts: Product[] = [
         retailer: "Trader Joe's",
         price: 2.99,
         size: "9 oz",
-        image: "/images/chili-lime-rolled-chips.jpg",
+        image: img('Snacks', '🌶️'),
         category: "Snacks",
       },
       {
@@ -178,7 +191,7 @@ export const mockProducts: Product[] = [
         retailer: "Trader Joe's",
         price: 3.99,
         size: "6 ct",
-        image: "/images/yogurt-cups.jpg",
+        image: img('Dairy', '🍓'),
         category: "Dairy",
       },
 ];
