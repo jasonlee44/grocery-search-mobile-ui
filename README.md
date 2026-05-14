@@ -2,6 +2,8 @@
 
 A mobile-first grocery search and deals UI built as part of the Prox Mobile App Development & Front-End Engineering Internship Assessment (Track C).
 
+**[Live Demo →](https://grocery-search-mobile-ui.vercel.app)**
+
 ## Setup
 
 ```bash
